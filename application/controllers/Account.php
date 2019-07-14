@@ -28,8 +28,8 @@ class Account extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-		$account = $this->utility_model->selectNow('myrx_users','id','username',$username)->row();
-		$hashPass = $this->utility_model->selectNow('myrx_users','password','username',$username)->row();
+		$account = $this->utility_model->selectNow('users','id','username',$username)->row();
+		$hashPass = $this->utility_model->selectNow('users','password','username',$username)->row();
 
 		if($account->id != "") {
 

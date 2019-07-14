@@ -19,7 +19,6 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
-
 </head>
 
 <body class="bg-dark">
@@ -28,21 +27,21 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form method="POST" action="<?= base_url('Account/loginNow') ?>">
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
-              <label for="username">Username</label>
+          <form method="POST" action="<?= base_url('Account/loginNow') ?>">
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="required" autofocus="autofocus" autocomplete="off">
+                <label for="username">Username</label>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Password</label>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
+                <label for="inputPassword">Password</label>
+              </div>
             </div>
-          </div>
-          <input type="submit" class="btn btn-primary btn-block" value="Login">
-        </form>
+            <input type="submit" class="btn btn-primary btn-block" value="Login">
+          </form>
       </div>
     </div>
   </div>

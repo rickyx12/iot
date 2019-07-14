@@ -7,7 +7,7 @@ class Account_model extends CI_Model {
     }
 
 	public function create($data) {
-		$sql = "INSERT INTO myrx_users(username,password,added) VALUES (?,?,?)";
+		$sql = "INSERT INTO users(username,password,added) VALUES (?,?,?)";
 		$this->db->query($sql, $data);			
 	}
 
