@@ -1,0 +1,2 @@
+# DEFAULT TEMPLATE FOR NEW PROJECT
+# Codeigniter and SB Admin
