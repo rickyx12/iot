@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2019 at 01:21 AM
+-- Generation Time: Jul 15, 2019 at 01:36 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -41,7 +41,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `added`) VALUES
 (1, 'ricky', '$2y$12$KWEkh2xlYFDUdMnjPuZ4sOs8E.7vlcs4qaw98Q5C54QQRyuLKj7lS', '2019-05-15 17:02:22'),
 (2, 'xricky', '$2y$12$rv2ngFXkepk/APygkB2rauJV5Wvre2ev5TeVsAfrT/iuATj2x2L6G', '2019-05-15 17:03:50'),
 (3, 'ricky12', '$2y$12$bI/mHPo.a86/JbnHtN9VN.7DkYW2MdQqczm3LmhnbbU47SCnhGBTC', '2019-05-15 17:04:23'),
-(4, 'root', '$2y$12$fKyhopqyRhMVmlcWySrQHuUyyOAV8qkal1VPPdgNPusAKQO4Euvye', '2019-07-07 14:09:35');
+(6, 'root', '$2y$12$iyDLOCtrQ72lPiHB406HR.7ljiniWssg7ACrsUMy9ciF3n4n2gd3u', '2019-07-15 01:35:36');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +61,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
