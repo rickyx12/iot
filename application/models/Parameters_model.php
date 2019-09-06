@@ -7,7 +7,7 @@ class Parameters_model extends CI_Model {
     }
 
 	public function create($data) {
-		$sql = "INSERT INTO parameters(temp,humidity,soil_moisture) VALUES (?,?,?)";
+		$sql = "INSERT INTO parameters(temp,humidity,soil_moisture,details) VALUES (?,?,?,?)";
 		$this->db->query($sql, $data);			
 	}
 

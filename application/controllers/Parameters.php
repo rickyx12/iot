@@ -23,7 +23,8 @@ class Parameters extends CI_Controller {
 		$data = array(
 				$temp[1],
 				$humidity[1],
-				$soilMoist[1]
+				$soilMoist[1],
+				date("Y-m-d H:i:s")
 			);
 
 		$this->parameters_model->create($data);
