@@ -49,4 +49,8 @@ class Parameters extends CI_Controller {
         echo json_encode($dataArr);            
     }
 
+    public function info() {
+    	echo phpinfo();
+    }
+
 }
