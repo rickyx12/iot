@@ -27,6 +27,7 @@
   <link href="<?= base_url('assets/css/select2.min.css') ?>" rel="stylesheet" />
   <link href="<?= base_url('assets/css/jquery.dataTables.min.css') ?>" rel="stylesheet" />
   <link href="<?= base_url('assets/css/daterangepicker.css') ?>" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
   
   <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
@@ -43,6 +44,7 @@
   <script src="<?= base_url('assets/js/buttons.html5.min.js') ?>"></script>
   <script src="<?= base_url('assets/js/misc.js') ?>"></script>
   <script src="<?= base_url('assets/js/daterangepicker.min.js') ?>"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 </head>
 
 <body id="page-top" data-urlbase="<?= base_url() ?>">

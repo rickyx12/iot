@@ -15,6 +15,42 @@
         </a>
       </li>
 
+      <?php if($page == "temperature-nav"): ?>
+        <li id="temperature-nav" class="nav-item active">
+      <?php else: ?>
+        <li id="temperature-nav" class="nav-item">
+      <?php endif; ?>
+
+        <a id="temperature" class="nav-link" href="<?= base_url('Temperature/index') ?>">
+          <i class="fas fa-fw fa-thermometer-quarter"></i>
+          <span>Temperature</span>
+        </a>
+      </li>
+
+      <?php if($page == "humidity-nav"): ?>
+        <li id="humidity-nav" class="nav-item active">
+      <?php else: ?>
+        <li id="humidity-nav" class="nav-item">
+      <?php endif; ?>
+
+        <a id="humidity" class="nav-link" href="<?= base_url('Humidity/index') ?>">
+          <i class="fas fa-fw fa-tint"></i>
+          <span>Humidity</span>
+        </a>
+      </li>
+
+      <?php if($page == "soilMoist-nav"): ?>
+        <li id="soilMoist-nav" class="nav-item active">
+      <?php else: ?>
+        <li id="soilMoist-nav" class="nav-item">
+      <?php endif; ?>
+
+        <a id="soilMoist" class="nav-link" href="<?= base_url('SoilMoisture/index') ?>">
+          <i class="fas fa-fw fa-water"></i>
+          <span>Soil Moisture</span>
+        </a>
+      </li>
+
       <?php if($page == 'settings-page'): ?>
         <li id="settings-nav" class="nav-item active">
       <?php else: ?>

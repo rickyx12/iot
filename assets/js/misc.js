@@ -8,11 +8,11 @@ today = mm + '-' + dd + '-' + yyyy;
 
 function formatDate(param) {
 
-	let dates = param;
+	var dates = param;
 
-	let date = dates.split("-");
-	let month = null;
-	let final = null;
+	var date = dates.split("-");
+	var month = null;
+	var final = null;
 
 	if(date[1] == "01") {
 		month = "Jan";		
@@ -49,11 +49,11 @@ function formatDate(param) {
 
 function formatTime(param) {
 
-	let times = param;
-	let time = times.split(":");
-	let hour = null;
-	let final = null;
-	let mode = null;
+	var times = param;
+	var time = times.split(":");
+	var hour = null;
+	var final = null;
+	var mode = null;
 
 	if(time[0] > 12) {
 		hour = time[0] - 12;
