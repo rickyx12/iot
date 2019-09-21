@@ -34,7 +34,7 @@
       <?php endif; ?>
 
         <a id="humidity" class="nav-link" href="<?= base_url('Humidity/index') ?>">
-          <i class="fas fa-fw fa-tint"></i>
+          <i class="fas fa-fw fa-wind"></i>
           <span>Humidity</span>
         </a>
       </li>
@@ -46,8 +46,20 @@
       <?php endif; ?>
 
         <a id="soilMoist" class="nav-link" href="<?= base_url('SoilMoisture/index') ?>">
-          <i class="fas fa-fw fa-water"></i>
+          <i class="fas fa-fw fa-tint"></i>
           <span>Soil Moisture</span>
+        </a>
+      </li>
+
+      <?php if($page == "ph-nav"): ?>
+        <li id="ph-nav" class="nav-item active">
+      <?php else: ?>
+        <li id="ph-nav" class="nav-item">
+      <?php endif; ?>
+
+        <a id="ph" class="nav-link" href="<?= base_url('Ph/index') ?>">
+          <i class="fas fa-fw fa-water"></i>
+          <span>pH</span>
         </a>
       </li>
 
