@@ -7,6 +7,10 @@ $(function(){
 	  var tempArr = [];
 	  var humidArr = [];
 	  var soilMoistArr = [];
+	  var phArr = [];
+	  var soilTypeArr = [];
+	  var soilTypeArr1 = [];
+	  var soilTypeArr2 = [];
 
 	  $.ajax({
 	  	url:base_url+'Parameters/getLatestParametersJSON',
@@ -26,6 +30,10 @@ $(function(){
 	  			tempArr.push(value.temperature);
 	  			humidArr.push(value.humidity);
 	  			soilMoistArr.push(value.soil_moisture);
+	  			phArr.push(value.ph);
+	  			soilTypeArr.push(value.soil_type);
+	  			soilTypeArr1.push(value.soil_type1);
+	  			soilTypeArr2.push(value.soil_type2);
 	  		});
 
 
@@ -59,7 +67,16 @@ $(function(){
 		        fill: false,
 		        lineTension: 0,
 		        radius: 5
-		      }		      
+		      },
+		      {
+		        label: "pH",
+		        data: phArr,
+		        backgroundColor: "yellow",
+		        borderColor: "yellow",
+		        fill: false,
+		        lineTension: 0,
+		        radius: 5
+		      }			      		      
 		    ]
 		  };
 
@@ -93,5 +110,69 @@ $(function(){
 	  	}
 	  });
 	
+
+	 var dashboardTable = $('#dashboardTable').DataTable({
+	 					processing:true,
+						serverSide:true,								
+						ajax:{
+							url: base_url+'Parameters/datatableJSON',
+						},
+						columns:[
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.temp
+								}
+							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.humidity
+								}
+							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_moisture
+								}
+							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.ph
+								}
+							},							
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type
+								}
+							},	
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type1
+								}
+							},		
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type2
+								}
+							},																																		
+							{
+								data:null,
+								render:function(data,type,row) {
+
+									var splitStr = data.details.split(" ");
+									var date = splitStr[0];
+									var time = splitStr[1];
+
+									return formatDate(date)+" @ "+formatTime(time);
+								}
+							}
+						]
+					});
+
 
 });
