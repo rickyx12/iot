@@ -7,14 +7,40 @@ class Parameters_model extends CI_Model {
     }
 
 	public function create($data) {
-		$sql = "INSERT INTO parameters(temp,humidity,soil_moisture,details) VALUES (?,?,?,?)";
+		$sql = "INSERT INTO parameters(temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details) VALUES (?,?,?,?,?,?,?,?,?,?)";
 		$this->db->query($sql, $data);			
 	}
 
-	public function getLatestParameters() {
+	public function getLatestParameters($start,$limit,$search) {
 
-		$sql = "SELECT * FROM parameters ORDER BY details DESC LIMIT 0,10 ";
-		return $this->db->query($sql);	
+		$start1 = $this->db->escape_str($start);
+		$limit1 = $this->db->escape_str($limit);
+		$search1 = $this->db->escape_str($search);
+
+		if($limit > 0 || $limit != '') {
+			if($search1 != "") {
+
+				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,details  
+						FROM parameters 
+						WHERE (soil_type LIKE '".$search1."%' OR soil_type1 LIKE '".$search1."' OR soil_type2 LIKE '".$search1."')
+						ORDER BY details DESC 
+						LIMIT ".$start1.",".$limit1;
+				
+				return $this->db->query($sql);	
+
+			}else {
+
+				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,details 
+						FROM parameters 
+						ORDER BY details DESC 
+						LIMIT ".$start1.",".$limit1;
+			}
+		}else {
+
+			$sql = "SELECT * FROM parameters ORDER BY details DESC LIMIT 0,10 ";	
+		}
+
+		return $this->db->query($sql);
 	}
 
 
@@ -28,7 +54,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT temp,details 
+				SELECT temp,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -39,14 +65,14 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT temp,details 
+				SELECT temp,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT temp,details FROM parameters";
+			$sql = "SELECT temp,soil_type,soil_type1,soil_type2,details FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
@@ -62,7 +88,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT humidity,details 
+				SELECT humidity,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -73,14 +99,14 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT humidity,details 
+				SELECT humidity,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT humidity,details FROM parameters";
+			$sql = "SELECT humidity,soil_type,soil_type1,soil_type2,details FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
@@ -96,7 +122,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT soil_moisture,details 
+				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -107,14 +133,48 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT soil_moisture,details 
+				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT soil_moisture,details FROM parameters";
+			$sql = "SELECT soil_moisture,soil_type,soil_type1,soil_type2,details FROM parameters";
+		}
+		return $this->db->query($sql);
+	}
+
+
+	public function getPh($start,$limit,$search) {
+
+		$start1 = $this->db->escape_str($start);
+		$limit1 = $this->db->escape_str($limit);
+		$search1 = $this->db->escape_str($search);
+		
+		if($limit > 0 || $limit != '') {
+			if($search1 != "") {
+				
+				$sql = "
+				SELECT ph,soil_type,soil_type1,soil_type2,details 
+				FROM parameters 
+				WHERE details
+				LIKE '".$search1."%' 
+				AND status = 1 
+				ORDER BY details DESC 
+				LIMIT ".$start1.",".$limit1;
+			
+			}else {
+				
+				$sql = "
+				SELECT ph,soil_type,soil_type1,soil_type2,details 
+				FROM parameters 
+				WHERE status = 1 
+				ORDER BY details DESC 
+				LIMIT ".$start1.",".$limit1;	
+			}	
+		}else {
+			$sql = "SELECT ph,soil_type,soil_type1,soil_type2,details FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
