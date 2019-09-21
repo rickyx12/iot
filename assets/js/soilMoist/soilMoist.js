@@ -47,7 +47,7 @@ $(function(){
 		    title: {
 		      display: true,
 		      position: "top",
-		      text: "Soil Moisture",
+		      text: "Edaphic Factors",
 		      fontSize: 18,
 		      fontColor: "#111"
 		    }
@@ -106,7 +106,14 @@ $(function(){
 
 									return formatDate(date)+" @ "+formatTime(time);
 								}
-							}
+							},
+							{
+								data:null,
+								render:function(data,type,row) {
+
+									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Map</a>";
+								}
+							}							
 						]
 					});
 

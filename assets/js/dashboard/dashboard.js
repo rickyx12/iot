@@ -170,6 +170,13 @@ $(function(){
 
 									return formatDate(date)+" @ "+formatTime(time);
 								}
+							},
+							{
+								data:null,
+								render:function(data,type,row) {
+
+									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Map</a>";
+								}
 							}
 						]
 					});

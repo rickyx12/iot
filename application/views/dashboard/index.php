@@ -40,6 +40,7 @@
                       <th></th>
                       <th></th>
                       <th>Details</th>
+                      <th></th>
                     </tr>
                   </thead>
                 </table>

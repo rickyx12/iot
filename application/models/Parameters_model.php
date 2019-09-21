@@ -20,7 +20,7 @@ class Parameters_model extends CI_Model {
 		if($limit > 0 || $limit != '') {
 			if($search1 != "") {
 
-				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,details  
+				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details  
 						FROM parameters 
 						WHERE (soil_type LIKE '".$search1."%' OR soil_type1 LIKE '".$search1."' OR soil_type2 LIKE '".$search1."')
 						ORDER BY details DESC 
@@ -30,7 +30,7 @@ class Parameters_model extends CI_Model {
 
 			}else {
 
-				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,details 
+				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details 
 						FROM parameters 
 						ORDER BY details DESC 
 						LIMIT ".$start1.",".$limit1;
@@ -54,7 +54,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT temp,soil_type,soil_type1,soil_type2,details 
+				SELECT temp,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -65,14 +65,14 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT temp,soil_type,soil_type1,soil_type2,details 
+				SELECT temp,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT temp,soil_type,soil_type1,soil_type2,details FROM parameters";
+			$sql = "SELECT temp,soil_type,soil_type1,soil_type2,details,longitude,latitude FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
@@ -88,7 +88,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT humidity,soil_type,soil_type1,soil_type2,details 
+				SELECT humidity,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -99,14 +99,14 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT humidity,soil_type,soil_type1,soil_type2,details 
+				SELECT humidity,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT humidity,soil_type,soil_type1,soil_type2,details FROM parameters";
+			$sql = "SELECT humidity,soil_type,soil_type1,soil_type2,details,longitude,latitude FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
@@ -122,7 +122,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details 
+				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -133,14 +133,14 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details 
+				SELECT soil_moisture,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
 				LIMIT ".$start1.",".$limit1;	
 			}	
 		}else {
-			$sql = "SELECT soil_moisture,soil_type,soil_type1,soil_type2,details FROM parameters";
+			$sql = "SELECT soil_moisture,soil_type,soil_type1,soil_type2,details,longitude,latitude FROM parameters";
 		}
 		return $this->db->query($sql);
 	}
@@ -156,7 +156,7 @@ class Parameters_model extends CI_Model {
 			if($search1 != "") {
 				
 				$sql = "
-				SELECT ph,soil_type,soil_type1,soil_type2,details 
+				SELECT ph,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE details
 				LIKE '".$search1."%' 
@@ -167,7 +167,7 @@ class Parameters_model extends CI_Model {
 			}else {
 				
 				$sql = "
-				SELECT ph,soil_type,soil_type1,soil_type2,details 
+				SELECT ph,soil_type,soil_type1,soil_type2,details,longitude,latitude 
 				FROM parameters 
 				WHERE status = 1 
 				ORDER BY details DESC 
