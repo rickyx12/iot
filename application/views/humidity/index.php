@@ -32,6 +32,9 @@
                   <thead>
                     <tr>
                       <th>Humidity</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
                       <th>Details</th>
                     </tr>
                   </thead>

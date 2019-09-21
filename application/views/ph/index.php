@@ -5,7 +5,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Temperature</a>
+          <a href="#">pH</a>
         </li>
       </ol>
       <div class="row">
@@ -23,15 +23,15 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="chart" role="tabpanel" aria-labelledby="home-tab">
               <div class="col-md-12" height="80" width="100">
-                <canvas id="temperatureChart1" class="w-100 h-100"></canvas>
+                <canvas id="phChart" class="w-100 h-100"></canvas>
               </div>              
             </div>
             <div class="tab-pane fade" id="table" role="tabpanel" aria-labelledby="profile-tab">
               <div class="table-responsive mt-3">
-                <table id="temperatureTable" class="table table-bordered table-striped w-100">
+                <table id="phTable" class="table table-bordered table-striped w-100">
                   <thead>
                     <tr>
-                      <th>Temp</th>
+                      <th>pH</th>
                       <th></th>
                       <th></th>
                       <th></th>
@@ -48,4 +48,4 @@
     </div>
   </div>
 
-<script src="<?= base_url('assets/js/temperature/temperature.js') ?>"></script>
+<script src="<?= base_url('assets/js/ph/ph.js') ?>"></script>

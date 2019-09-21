@@ -78,6 +78,24 @@ $(function(){
 									return data.humidity
 								}
 							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type
+								}
+							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type1
+								}
+							},
+							{ 
+								data:null,
+								render:function(data,type,row) {
+									return data.soil_type2
+								}
+							},																					
 							{
 								data:null,
 								render:function(data,type,row) {
