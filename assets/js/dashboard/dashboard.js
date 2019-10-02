@@ -151,13 +151,21 @@ $(function(){
 							{ 
 								data:null,
 								render:function(data,type,row) {
-									return data.soil_type1
+									if(data.soil_type == "dry") {
+										return "";
+									}else {
+										return data.soil_type1;
+									}	
 								}
 							},		
 							{ 
 								data:null,
 								render:function(data,type,row) {
-									return data.soil_type2
+									if(data.soil_type == "dry") {
+										return "";
+									}else {
+										return data.soil_type2;
+									}
 								}
 							},																																		
 							{
@@ -175,7 +183,7 @@ $(function(){
 								data:null,
 								render:function(data,type,row) {
 
-									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Map</a>";
+									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Coordinates</a>";
 								}
 							}
 						]

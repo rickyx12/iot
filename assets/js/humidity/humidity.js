@@ -47,7 +47,7 @@ $(function(){
 		    title: {
 		      display: true,
 		      position: "top",
-		      text: "Edaphic Factors",
+		      text: "Climatic Factors",
 		      fontSize: 18,
 		      fontColor: "#111"
 		    }

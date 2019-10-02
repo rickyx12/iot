@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Default Template</title>
+  <title>Smart Farming</title>
 
   <link rel="shortcut icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/x-icon">
   <link rel="icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/x-icon">
