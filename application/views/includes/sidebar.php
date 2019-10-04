@@ -63,7 +63,7 @@
         </a>
       </li>
 
-      <?php if($page == 'settings-page'): ?>
+<!--       <?php if($page == 'settings-page'): ?>
         <li id="settings-nav" class="nav-item active">
       <?php else: ?>
         <li id="settings-nav" class="nav-item">
@@ -73,6 +73,6 @@
           <i class="fas fa-fw fa-wrench"></i>
           <span>Settings</span>
         </a>
-      </li>
+      </li> -->
 
     </ul>
