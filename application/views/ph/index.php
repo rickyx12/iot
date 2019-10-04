@@ -36,7 +36,7 @@
                       <th></th>
                       <th></th>
                       <th>Details</th>
-                      <th></th>
+                      <th>Geolocation</th>
                     </tr>
                   </thead>
                 </table>

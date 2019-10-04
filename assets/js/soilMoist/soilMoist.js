@@ -111,7 +111,7 @@ $(function(){
 								data:null,
 								render:function(data,type,row) {
 
-									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Map</a>";
+									return "<a href='http://www.google.com/maps/place/"+data.latitude+","+data.longitude+"' target='_blank'>Coordinates</a>";
 								}
 							}							
 						]
