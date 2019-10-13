@@ -49,7 +49,7 @@ class Parameters extends CI_Controller {
 
     public function getLatestParametersJSON() {
         // $this->isLoggedIn();
-		$data = $this->parameters_model->getLatestParameters(null,null,null)->result();
+		$data = $this->parameters_model->getLatestParameters("0","10",null)->result();
         $dataArr = [];
 
         foreach($data as $d) {

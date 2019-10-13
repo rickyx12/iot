@@ -20,7 +20,7 @@ class Parameters_model extends CI_Model {
 		if($limit > 0 || $limit != '') {
 			if($search1 != "") {
 
-				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details  
+				$sql = "SELECT id,temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details  
 						FROM parameters 
 						WHERE (soil_type LIKE '".$search1."%' OR soil_type1 LIKE '".$search1."' OR soil_type2 LIKE '".$search1."')
 						ORDER BY details DESC 
@@ -30,14 +30,14 @@ class Parameters_model extends CI_Model {
 
 			}else {
 
-				$sql = "SELECT temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details 
+				$sql = "SELECT id,temp,humidity,soil_moisture,ph,soil_type,soil_type1,soil_type2,longitude,latitude,details 
 						FROM parameters 
 						ORDER BY details DESC 
 						LIMIT ".$start1.",".$limit1;
 			}
 		}else {
 
-			$sql = "SELECT * FROM parameters ORDER BY details DESC LIMIT 0,10 ";	
+			$sql = "SELECT * FROM parameters ORDER BY details";	
 		}
 
 		return $this->db->query($sql);
